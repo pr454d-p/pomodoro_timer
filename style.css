@@ -1,0 +1,135 @@
+body {
+  background-color: white;
+  font-size: 44px
+}
+
+.wrapper {
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrapper h2 {
+  margin: 0;
+}
+
+.break-session-length {
+    display: flex;
+    width: 700px;
+    justify-content: space-between;
+    font-size: 25px
+}
+
+
+
+button {
+  border: none;
+  font-size: .75em;
+  border-radius: 4px;
+}
+
+div > button {
+  color: white;
+  background-color: red;
+  border-radius: 50%;
+}
+
+strong {
+  margin: 0 8px;
+}
+
+.timer {
+  text-align: center;
+}
+
+.timer-wrapper > button {
+  margin-left: 10px
+}
+
+
+/* Sets the containers height and width */
+.base-timer {
+  position: relative;
+  height: 20rem;
+  width: 20rem;
+}
+
+/* Removes SVG styling that would hide the time label */
+.base-timer__circle {
+  fill: none;
+  stroke: none;
+}
+
+/* The SVG path that displays the timer's progress */
+.base-timer__path-elapsed {
+  stroke-width: .4rem;
+  stroke: grey;
+}
+
+.base-timer__label {
+  position: absolute;
+  line-height:1rem;
+  
+  /* Size should match the parent container */
+  width: 20rem;
+  height: 5rem;
+  
+  /* Keep the label aligned to the top */
+  top: 5rem;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  
+  /* Create a flexible box that centers content vertically and horizontally */
+  display: grid;
+  align-items: center;
+  justify-content: center;
+
+  /* Sort of an arbitrary number; adjust to your liking */
+  font-size: 2rem;
+}
+
+#start_stop,#reset{
+  height: 3rem;
+  width:4rem;
+  margin: 3px
+}
+
+
+
+.base-timer__path-remaining {
+  /* Just as thick as the original ring */
+  stroke-width: .4rem;
+
+  /* Rounds the line endings to create a seamless circle */
+  stroke-linecap: round;
+
+  /* Makes sure the animation starts at the top of the circle */
+  transform: rotate(90deg);
+  transform-origin: center;
+
+  /* One second aligns with the speed of the countdown timer */
+  transition: 1s linear all;
+
+  /* Allows the ring to change color when the color value updates */
+  stroke: currentColor;
+}
+
+.base-timer__svg {
+  /* Flips the svg and makes the animation to move left-to-right */
+  transform: scaleX(-1);
+}
+
+.base-timer__path-remaining.green {
+  color: rgb(65, 184, 131);
+}
+
+.base-timer__path-remaining.orange {
+  color: orange;
+}
+
+.base-timer__path-remaining.red {
+  color: red;
+}
